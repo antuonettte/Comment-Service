@@ -25,7 +25,7 @@ def lambda_handler(event, context):
     
     if http_method == 'GET':
         # Handle GET request
-        post_id = event['queryStringParameters']['postID']
+        post_id = event['queryStringParameters']['post_id']
         return get_comments_by_post(post_id)
     
     elif http_method == 'POST':
