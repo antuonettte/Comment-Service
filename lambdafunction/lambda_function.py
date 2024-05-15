@@ -41,7 +41,7 @@ def lambda_handler(event, context):
     
 def get_comments_by_post(post_id):
     try:
-        cursor.execute(f"SELECT * FROM users WHERE post_id = {post_id}")
+        cursor.execute(f"SELECT * FROM comments WHERE post_id = {post_id}")
         comments = cursor.fetchall()
 
         if comments:
