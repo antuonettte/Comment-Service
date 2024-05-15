@@ -1,2 +1,2 @@
-# Comment-Service
-Service for handling user comments
+# Media-Service
+Service for handling media.
