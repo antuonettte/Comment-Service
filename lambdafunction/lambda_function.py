@@ -47,9 +47,10 @@ def get_comments_by_post(post_id):
         if comments:
             print(comments)
 
+
             return{
                 'statusCode' : 200,
-                'body' : json.dumps(comments)
+                'body' : json.dumps(convert_tuple_to_dict(comments))
             }
         else:
             return {
@@ -78,3 +79,16 @@ def post_comment(comment_data):
             'statusCode': 500,
             'body': json.dumps(f'Error: {str(e)}')
         }
+    
+def convert_tuple_to_dict(comments):
+    objs = []
+    for comment in comments:
+        objs.append({
+            "id":comment[0],
+            "post_id":comment[1],
+            "user_id":comment[2],
+            "content":comment[3],
+            "created_at":comment[4].strftime('%Y-%m-%d %H:%M:%S')
+        })
+
+    return objs
