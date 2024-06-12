@@ -21,8 +21,8 @@ def lambda_handler(event, context):
     # Determine the HTTP method
     http_method = None
     http_method = event['httpMethod']
-    
-    
+ 
+
     if http_method == 'GET':
         # Handle GET request
         post_id = event['queryStringParameters']['post_id']
